@@ -1,0 +1,65 @@
+@import '../../global/Assets.scss';
+@import '../../global/Mixin';
+
+.search-container {
+    width: 700px;
+    margin: 200px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: $transitionEase;
+
+    .search-container__title {
+        color: $grays;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+}
+
+.search-elements {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+
+    .search-elements__input {
+        padding: 13px;
+        border: none;
+        border-radius: 5px;
+        background-color: $softBlack;
+        outline: none;
+        color: $grays;
+
+        &::placeholder {
+            color: $grays;
+            font-size: 0.90em;
+            text-transform: capitalize;
+        }
+
+        &:focus {
+            border-bottom: 2px solid $green;
+            transition: $transitionFast;
+        }
+    }
+
+    .search-elements__btn {
+        @include button;
+        padding: 13px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:720px) {
+    .search-container {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width:512px) {
+    .search-container {
+        width: 320px;
+    }
+}

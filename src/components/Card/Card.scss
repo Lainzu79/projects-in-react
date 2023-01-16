@@ -1,0 +1,97 @@
+@import '../../global/Assets.scss';
+@import '../../global/Mixin';
+
+.card-box {
+    display: flex;
+    align-items: center;
+    width: 700px;
+    margin: 30px auto 0;
+    background-color: $softBlack;
+    padding: 20px;
+    border-radius: 5px;
+    transition: $transitionEase;
+}
+
+.card-user {
+    display: flex;
+    flex-direction: column;
+
+    .card-user__photo {
+        width: 100px;
+        border-radius: 5px;
+    }
+
+    .card-user__name {
+        margin: 0 0 10px;
+        color: $grays;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    .card-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0 0;
+
+        .card-info__followers {
+            @include cardText;
+        }
+
+        .card-info__followers span {
+            color: $green;
+        }
+
+        .card-info__following {
+            @include cardText;
+        }
+
+        .card-info__following span {
+            color: $green;
+        }
+    }
+}
+
+.card-playlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .card-playlist__icon {
+        color: $softWhite;
+    }
+
+    .card-playlist__name {
+        color: $softWhite;
+        text-transform: capitalize;
+        font-size: 1.1em;
+        font-weight: 600;
+
+        @media screen and (max-width:512px) {
+            font-size: 0.90em;
+            text-align: center;
+        }
+    }
+
+    .card-playlist__btn {
+        @include button;
+        padding: 13px;
+    }
+}
+
+@media screen and (max-width:720px) {
+    .card-box {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width:512px) {
+    .card-box {
+        width: 320px;
+    }
+
+    .card-playlist {
+        padding: 10px;
+    }
+}
